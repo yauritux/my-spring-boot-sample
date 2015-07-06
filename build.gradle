@@ -1,0 +1,36 @@
+buildscript {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+    maven { url "http://repo.spring.io/snapshot" }
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE")
+    classpath("org.postgresql:postgresql:9.3-1102-jdbc41")
+  }
+}
+
+apply plugin: 'spring-boot'
+
+group = 'com.yauritux'
+version = '1.0.0.'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+  jcenter()
+  maven { url "http://repo.spring.io/libs-snapshot" }
+  maven { url "http://repo.apache.maven.org/maven2" }
+}
+
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter-web")
+  compile("org.springframework.boot:spring-boot-starter-data-jpa")
+  compile("org.springframework.boot:spring-boot-starter-data-rest")
+  compile("org.springframework.boot:spring-boot-starter-security")
+  compile("org.postgresql:postgresql:9.3-1102-jdbc41")
+}
